@@ -12,14 +12,14 @@ type Props = {
 };
 
 /**
- * Pure-CSS rendering of the OHAYO breakfast pouch.
+ * Pure-CSS rendering of the BlendStart breakfast pouch.
  *
  * Replicates the brand packaging: pink top half with red sun-disc + chunky
- * "OHAYO" wordmark, cream bottom half with the product label and stats.
+ * "BlendStart" wordmark, cream bottom half with the product label and stats.
  *
  * Designed to be used at any size — set width with className (e.g. w-64).
  */
-export function OhayoPouch({
+export function BlendStartPouch({
   variant = 'balanced',
   className,
   rotate = 0,
@@ -60,7 +60,7 @@ export function OhayoPouch({
             )}
             style={{ containerType: 'inline-size' }}
           >
-            OHAYO
+            BlendStart
           </div>
 
           {/* Product label */}

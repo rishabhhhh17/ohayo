@@ -1,8 +1,7 @@
 /**
  * Editorial split — brand story.
  *
- * Two alternating image/text sections. Establishes the brand voice and the
- * Japanese "good morning" inspiration behind OHAYO.
+ * Two alternating image/text sections that establish the BlendStart voice.
  */
 
 import Image from 'next/image';
@@ -13,7 +12,7 @@ const SECTIONS = [
   {
     eyebrow: 'Our story',
     title: 'Good mornings, on purpose.',
-    body: '"OHAYO" means good morning in Japanese. We named it that because mornings deserve more than a sad granola bar. We spent two years formulating a single drink that tastes like dessert and behaves like a meal — without the sugar crash that follows.',
+    body: 'BlendStart began with a question: why does breakfast keep losing? Cereal is sugar. Bars are candy. Coffee is not a meal. We spent two years formulating a single drink that tastes like dessert and behaves like a meal — so the most important meal of the day actually shows up.',
     cta: { label: 'Read our story', href: '/about' },
     img: 'https://images.unsplash.com/photo-1493770348161-369560ae357d?w=1200&h=1400&fit=crop&crop=entropy&auto=format&q=85',
     imgAlt: 'A warm, sunlit breakfast spread on a wooden table',

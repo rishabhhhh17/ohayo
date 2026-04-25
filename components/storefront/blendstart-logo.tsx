@@ -11,20 +11,20 @@ type Props = {
 };
 
 /**
- * OHAYO wordmark. The chunky display look comes from `font-display`
+ * BlendStart wordmark. The chunky display look comes from `font-display`
  * (Bagel Fat One). When `withSun` is on, a red sun-disc is layered above.
  */
-export function OhayoLogo({ className, stacked, withSun = true, light }: Props) {
+export function BlendStartLogo({ className, stacked, withSun = true, light }: Props) {
   if (stacked) {
     return (
       <span
         className={cn('inline-flex flex-col items-center leading-none', className)}
-        aria-label="OHAYO"
+        aria-label="BlendStart"
       >
         {withSun && (
           <span
             aria-hidden="true"
-            className="ohayo-sun mb-1 h-3 w-3 sm:h-4 sm:w-4"
+            className="blendstart-sun mb-1 h-3 w-3 sm:h-4 sm:w-4"
           />
         )}
         <span
@@ -33,7 +33,7 @@ export function OhayoLogo({ className, stacked, withSun = true, light }: Props) 
             light ? 'text-cream' : 'text-cocoa',
           )}
         >
-          OHAYO
+          BlendStart
         </span>
       </span>
     );
@@ -42,12 +42,12 @@ export function OhayoLogo({ className, stacked, withSun = true, light }: Props) 
   return (
     <span
       className={cn('inline-flex items-center gap-2 leading-none', className)}
-      aria-label="OHAYO"
+      aria-label="BlendStart"
     >
       {withSun && (
         <span
           aria-hidden="true"
-          className="ohayo-sun h-3 w-3 sm:h-3.5 sm:w-3.5"
+          className="blendstart-sun h-3 w-3 sm:h-3.5 sm:w-3.5"
         />
       )}
       <span
@@ -56,7 +56,7 @@ export function OhayoLogo({ className, stacked, withSun = true, light }: Props) 
           light ? 'text-cream' : 'text-cocoa',
         )}
       >
-        OHAYO
+        BlendStart
       </span>
     </span>
   );

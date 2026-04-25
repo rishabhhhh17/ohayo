@@ -5,22 +5,22 @@ import { CartHydrator } from '@/components/storefront/cart-hydrator';
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | OHAYO',
-    default: 'OHAYO — The Morning Fuel',
+    template: '%s | BlendStart',
+    default: 'BlendStart — The Morning Fuel',
   },
   description:
     'A premium breakfast drink mix. 23g protein, 11g fibre, electrolytes. Salted caramel cocoa, ready in 20 seconds.',
   openGraph: {
-    title: 'OHAYO — The Morning Fuel',
+    title: 'BlendStart — The Morning Fuel',
     description:
       'A premium breakfast drink mix. 23g protein, 11g fibre, electrolytes. Salted caramel cocoa, ready in 20 seconds.',
-    siteName: 'OHAYO',
+    siteName: 'BlendStart',
     locale: 'en_IN',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'OHAYO — The Morning Fuel',
+    title: 'BlendStart — The Morning Fuel',
     description:
       'A premium breakfast drink mix. 23g protein, 11g fibre, electrolytes. Salted caramel cocoa, ready in 20 seconds.',
   },

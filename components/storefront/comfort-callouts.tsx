@@ -1,5 +1,5 @@
 /**
- * Why OHAYO — 4-up benefits grid.
+ * Why BlendStart — 4-up benefits grid.
  *
  * Replaces the legacy "comfort callouts" with morning-fuel benefits.
  */
@@ -44,11 +44,11 @@ const itemVariants: Variants = {
 
 export function ComfortCallouts() {
   return (
-    <section aria-label="Why OHAYO" className="relative bg-rose/40">
+    <section aria-label="Why BlendStart" className="relative bg-rose/40">
       <div className="container py-20 md:py-28">
         <div className="mx-auto max-w-2xl text-center">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-sun">
-            Why OHAYO
+            Why BlendStart
           </p>
           <h2 className="font-display text-cocoa text-[clamp(2.25rem,5vw,3.75rem)] leading-[1] tracking-tight">
             Breakfast, <span className="font-editorial text-cocoa/70">re-engineered.</span>

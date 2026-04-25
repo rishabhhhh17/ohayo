@@ -5,11 +5,11 @@ import Link from 'next/link';
 import { User, ShoppingBag, Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useCartStore } from '@/lib/cart/store';
-import { OhayoLogo } from '@/components/storefront/ohayo-logo';
+import { BlendStartLogo } from '@/components/storefront/blendstart-logo';
 
 const NAV_LINKS = [
   { label: 'Shop', href: '/products' },
-  { label: 'Why OHAYO', href: '/#brand-story' },
+  { label: 'Why BlendStart', href: '/#brand-story' },
   { label: 'Nutrition', href: '/#nutrition' },
   { label: 'About', href: '/about' },
 ] as const;
@@ -51,9 +51,9 @@ export function SiteHeader() {
           <Link
             href="/"
             className="shrink-0 text-2xl tracking-tight transition-opacity hover:opacity-80"
-            aria-label="OHAYO — home"
+            aria-label="BlendStart — home"
           >
-            <OhayoLogo className="text-2xl sm:text-3xl" />
+            <BlendStartLogo className="text-2xl sm:text-3xl" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-7" aria-label="Primary navigation">

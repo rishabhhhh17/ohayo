@@ -58,7 +58,7 @@ export function HowItWorks() {
             <div key={s.n} className="relative z-10 flex flex-col items-center text-center">
               {/* Sun-disc step circle */}
               <div className="relative mb-6 flex h-22 w-22">
-                <div className="ohayo-sun flex h-22 w-22 items-center justify-center" style={{ width: 88, height: 88 }}>
+                <div className="blendstart-sun flex h-22 w-22 items-center justify-center" style={{ width: 88, height: 88 }}>
                   <span className="font-display text-2xl text-cream">{s.n}</span>
                 </div>
               </div>

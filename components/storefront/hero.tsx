@@ -1,12 +1,12 @@
 /**
- * Hero — OHAYO morning fuel
+ * Hero — BlendStart morning fuel
  *
  * Two-column layout:
  *   Left  — chunky display headline, sub, dual CTA, social proof, value props
  *   Right — layered "still life" of two pouches + a glass of cocoa, with a
  *           large rotating sun-disc behind for the brand motif.
  *
- * Uses the OhayoPouch CSS component so the hero never depends on a missing
+ * Uses the BlendStartPouch CSS component so the hero never depends on a missing
  * image asset — every element renders from tokens.
  */
 
@@ -14,7 +14,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { OhayoPouch } from '@/components/storefront/ohayo-pouch';
+import { BlendStartPouch } from '@/components/storefront/blendstart-pouch';
 
 export function Hero() {
   return (
@@ -38,7 +38,7 @@ export function Hero() {
         <div className="md:col-span-6">
           {/* Eyebrow pill */}
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cocoa/10 bg-cream-light/80 px-3.5 py-1.5 backdrop-blur">
-            <span className="ohayo-sun h-2 w-2" aria-hidden="true" />
+            <span className="blendstart-sun h-2 w-2" aria-hidden="true" />
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-cocoa/75">
               The Morning Fuel
             </span>
@@ -70,7 +70,7 @@ export function Hero() {
               size="lg"
               className="rounded-full bg-cocoa px-7 py-6 text-base font-bold uppercase tracking-wider text-cream shadow-lift hover:bg-cocoa/90"
             >
-              <Link href="/products">Shop OHAYO</Link>
+              <Link href="/products">Shop BlendStart</Link>
             </Button>
             <Button
               asChild
@@ -119,7 +119,7 @@ export function Hero() {
               aria-hidden="true"
               className="absolute left-1/2 top-1/2 h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 sm:h-[460px] sm:w-[460px] md:h-[520px] md:w-[520px]"
             >
-              <div className="ohayo-sun h-full w-full animate-spin-slow opacity-95" />
+              <div className="blendstart-sun h-full w-full animate-spin-slow opacity-95" />
               {/* Concentric ring */}
               <div className="absolute inset-[-20px] rounded-full border-2 border-dashed border-cocoa/15" />
             </div>
@@ -131,12 +131,12 @@ export function Hero() {
 
             {/* Performance pouch — center, slight rotate */}
             <div className="absolute right-[8%] top-[6%] z-30 w-[48%] sm:w-[44%]">
-              <OhayoPouch variant="performance" rotate={4} />
+              <BlendStartPouch variant="performance" rotate={4} />
             </div>
 
             {/* Balanced pouch — back, peeking from behind */}
             <div className="absolute left-[24%] top-[14%] z-10 w-[34%] opacity-90">
-              <OhayoPouch variant="balanced" rotate={-10} />
+              <BlendStartPouch variant="balanced" rotate={-10} />
             </div>
 
             {/* Floating "23g protein" sticker */}

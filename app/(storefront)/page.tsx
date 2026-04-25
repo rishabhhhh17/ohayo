@@ -11,7 +11,7 @@ import { FaqSection } from '@/components/storefront/faq-section';
 import { NewsletterCta } from '@/components/storefront/newsletter-cta';
 
 export const metadata: Metadata = {
-  title: 'OHAYO — The Morning Fuel',
+  title: 'BlendStart — The Morning Fuel',
   description:
     'A premium breakfast drink mix. 23g protein, 11g fibre, electrolytes. Salted caramel cocoa, ready in 20 seconds.',
 };

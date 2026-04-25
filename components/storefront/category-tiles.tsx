@@ -2,12 +2,12 @@
  * Pick your blend — two-up product variants (Balanced vs Performance).
  *
  * Replaces the legacy "category tiles" with a focused product comparison
- * tailored to OHAYO's only SKU: Salted Caramel Cocoa, in two formulations.
+ * tailored to BlendStart's only SKU: Salted Caramel Cocoa, in two formulations.
  */
 
 import Link from 'next/link';
 import { Check } from 'lucide-react';
-import { OhayoPouch } from '@/components/storefront/ohayo-pouch';
+import { BlendStartPouch } from '@/components/storefront/blendstart-pouch';
 import { Button } from '@/components/ui/button';
 
 const VARIANTS = [
@@ -121,7 +121,7 @@ export function CategoryTiles() {
                 </div>
 
                 <div className="relative w-full max-w-[180px] shrink-0 self-center sm:max-w-[200px]">
-                  <OhayoPouch variant={v.key} />
+                  <BlendStartPouch variant={v.key} />
                 </div>
               </div>
             </article>

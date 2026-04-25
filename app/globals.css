@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    /* ---------- OHAYO brand tokens ---------- */
+    /* ---------- BlendStart brand tokens ---------- */
     /* Warm cream — primary canvas */
     --background: 36 38% 92%;          /* #F2E8D7 / cream */
     --foreground: 18 45% 12%;          /* #2A1810 dark cocoa */
@@ -87,8 +87,8 @@
 }
 
 @layer utilities {
-  /* OHAYO sun-disc motif — solid circle in brand red */
-  .ohayo-sun {
+  /* BlendStart sun-disc motif — solid circle in brand red */
+  .blendstart-sun {
     @apply rounded-full bg-primary;
     box-shadow: 0 4px 24px -8px hsl(var(--primary) / 0.4);
   }

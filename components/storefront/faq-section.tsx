@@ -7,7 +7,7 @@
 
 const FAQS = [
   {
-    q: 'Can OHAYO actually replace breakfast?',
+    q: 'Can BlendStart actually replace breakfast?',
     a: 'Yes — every serving has 23g of complete protein, 11g of prebiotic fibre, healthy fats, electrolytes and 180 kcal. That covers what a balanced breakfast should give you, in one glass.',
   },
   {
@@ -52,10 +52,10 @@ export function FaqSection() {
             <p className="mt-5 max-w-sm text-base text-cocoa/65 leading-relaxed">
               Still curious? Drop us a note at{' '}
               <a
-                href="mailto:hello@ohayo.in"
+                href="mailto:hello@blendstart.com"
                 className="text-cocoa underline underline-offset-4 hover:text-sun"
               >
-                hello@ohayo.in
+                hello@blendstart.com
               </a>
               .
             </p>

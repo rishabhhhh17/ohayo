@@ -25,7 +25,7 @@ const bagel = Bagel_Fat_One({
 });
 
 export const metadata: Metadata = {
-  title: 'OHAYO — The Morning Fuel',
+  title: 'BlendStart — The Morning Fuel',
   description:
     'Breakfast in a glass. 23g protein, 11g fibre, electrolytes. A premium morning drink mix that replaces breakfast — without the trade-offs.',
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),

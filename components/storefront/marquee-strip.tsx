@@ -28,7 +28,7 @@ export function MarqueeStrip() {
             <span className="font-display text-2xl tracking-tight text-cream md:text-3xl">
               {item}
             </span>
-            <span aria-hidden="true" className="ohayo-sun h-3 w-3 shrink-0" />
+            <span aria-hidden="true" className="blendstart-sun h-3 w-3 shrink-0" />
           </div>
         ))}
       </div>

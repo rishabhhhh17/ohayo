@@ -4,9 +4,9 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'About OHAYO — The morning fuel',
+  title: 'About BlendStart — The morning fuel',
   description:
-    'OHAYO is a premium breakfast drink mix built around one stubborn idea — that mornings should fuel the rest of your day, not be skipped over.',
+    'BlendStart is a premium breakfast drink mix built around one stubborn idea — that mornings should fuel the rest of your day, not be skipped over.',
 };
 
 export default function AboutPage() {
@@ -33,7 +33,7 @@ export default function AboutPage() {
             not granted.
           </h1>
           <p className="mt-7 text-base text-cocoa/70 md:text-lg md:leading-relaxed">
-            OHAYO started with one stubborn idea — that the most important meal of the
+            BlendStart started with one stubborn idea — that the most important meal of the
             day shouldn&rsquo;t be the one you keep skipping. So we set out to build a
             single drink that does the job of a real breakfast: protein, fibre, fats,
             electrolytes — without the sugar bombs and 30-ingredient labels.
@@ -143,7 +143,7 @@ export default function AboutPage() {
                 size="lg"
                 className="rounded-full bg-cocoa px-7 py-6 text-sm font-bold uppercase tracking-wider text-cream hover:bg-cocoa/90"
               >
-                <Link href="/products">Shop OHAYO</Link>
+                <Link href="/products">Shop BlendStart</Link>
               </Button>
             </div>
           </div>

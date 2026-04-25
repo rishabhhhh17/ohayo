@@ -57,7 +57,7 @@ const config: Config = {
         },
         success: 'hsl(var(--success))',
         warning: 'hsl(var(--warning))',
-        // OHAYO named tokens for direct use in components
+        // BlendStart named tokens for direct use in components
         cream: 'hsl(36 38% 92%)',
         'cream-light': 'hsl(36 50% 96%)',
         rose: 'hsl(350 70% 88%)',

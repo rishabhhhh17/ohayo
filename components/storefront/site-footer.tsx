@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Mail } from 'lucide-react';
-import { OhayoLogo } from '@/components/storefront/ohayo-logo';
+import { BlendStartLogo } from '@/components/storefront/blendstart-logo';
 
 function InstagramIcon({ size = 18 }: { size?: number }) {
   return (
@@ -36,7 +36,7 @@ const FOOTER_COLUMNS = [
   {
     heading: 'Learn',
     links: [
-      { label: 'Why OHAYO', href: '/#brand-story' },
+      { label: 'Why BlendStart', href: '/#brand-story' },
       { label: 'Nutrition', href: '/#nutrition' },
       { label: 'How it works', href: '/#how' },
       { label: 'FAQ', href: '/#faq' },
@@ -71,7 +71,7 @@ export function SiteFooter() {
       <div className="border-b border-cocoa/10 bg-cream">
         <div className="container grid grid-cols-1 items-center gap-8 py-12 md:grid-cols-2 md:gap-12">
           <div>
-            <OhayoLogo className="text-4xl md:text-5xl" />
+            <BlendStartLogo className="text-4xl md:text-5xl" />
             <p className="mt-4 max-w-md font-editorial text-xl leading-snug text-cocoa/80 md:text-2xl">
               &ldquo;Mornings are won, not granted.&rdquo;
             </p>
@@ -81,23 +81,23 @@ export function SiteFooter() {
           <div className="flex flex-col items-start gap-4 md:items-end">
             <div className="flex items-center gap-2">
               <Link
-                href="https://instagram.com/ohayo.breakfast"
+                href="https://instagram.com/blendstart"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="OHAYO on Instagram"
+                aria-label="BlendStart on Instagram"
                 className="flex h-11 w-11 items-center justify-center rounded-full bg-cocoa text-cream transition-transform hover:scale-105"
               >
                 <InstagramIcon size={18} />
               </Link>
               <a
-                href="mailto:hello@ohayo.in"
-                aria-label="Email OHAYO"
+                href="mailto:hello@blendstart.com"
+                aria-label="Email BlendStart"
                 className="flex h-11 w-11 items-center justify-center rounded-full bg-cocoa text-cream transition-transform hover:scale-105"
               >
                 <Mail size={18} aria-hidden="true" />
               </a>
             </div>
-            <p className="text-sm text-cocoa/60">@ohayo.breakfast · hello@ohayo.in</p>
+            <p className="text-sm text-cocoa/60">@blendstart · hello@blendstart.com</p>
           </div>
         </div>
       </div>
@@ -166,7 +166,7 @@ export function SiteFooter() {
       <div className="border-t border-cocoa/10 bg-cocoa text-cream">
         <div className="container flex flex-col gap-3 py-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-cream/65">
-            &copy; {year} OHAYO. All rights reserved.
+            &copy; {year} BlendStart. All rights reserved.
           </p>
           <p className="text-xs text-cream/65">
             FSSAI Lic. No. ••••• · Manufactured in India
