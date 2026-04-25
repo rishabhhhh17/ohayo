@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ---------- OHAYO brand tokens ---------- */
+    /* Warm cream — primary canvas */
+    --background: 36 38% 92%;          /* #F2E8D7 / cream */
+    --foreground: 18 45% 12%;          /* #2A1810 dark cocoa */
+
+    --card: 36 50% 96%;                /* slightly lighter than bg for cards */
+    --card-foreground: 18 45% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 18 45% 12%;
+
+    /* Sun red — primary CTA */
+    --primary: 9 78% 54%;              /* #E54A2D sun red */
+    --primary-foreground: 36 50% 96%;
+
+    /* Soft rose — secondary accent (packaging top half) */
+    --secondary: 350 70% 88%;          /* #F8C9CD soft rose */
+    --secondary-foreground: 18 45% 12%;
+
+    --muted: 36 22% 86%;               /* warm sand */
+    --muted-foreground: 18 18% 32%;
+
+    --accent: 350 70% 88%;
+    --accent-foreground: 18 45% 12%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 50% 38%;
+    --warning: 38 92% 50%;
+
+    --border: 30 22% 80%;              /* soft tan border */
+    --input: 30 22% 82%;
+    --ring: 9 78% 54%;                 /* sun red focus */
+
+    --radius: 1rem;                    /* 16px default */
+  }
+
+  .dark {
+    --background: 18 25% 8%;
+    --foreground: 36 38% 92%;
+    --card: 18 25% 11%;
+    --card-foreground: 36 38% 92%;
+    --popover: 18 25% 11%;
+    --popover-foreground: 36 38% 92%;
+    --primary: 9 78% 58%;
+    --primary-foreground: 18 25% 8%;
+    --secondary: 350 30% 22%;
+    --secondary-foreground: 36 38% 92%;
+    --muted: 18 18% 18%;
+    --muted-foreground: 36 18% 70%;
+    --accent: 9 60% 30%;
+    --accent-foreground: 36 38% 92%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 18 18% 22%;
+    --input: 18 18% 22%;
+    --ring: 9 78% 58%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+
+  /* Subtle paper-like texture on the canvas */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image: radial-gradient(rgba(42, 24, 16, 0.025) 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity: 0.6;
+  }
+}
+
+@layer utilities {
+  /* OHAYO sun-disc motif — solid circle in brand red */
+  .ohayo-sun {
+    @apply rounded-full bg-primary;
+    box-shadow: 0 4px 24px -8px hsl(var(--primary) / 0.4);
+  }
+
+  /* Chunky display headline */
+  .font-display {
+    font-family: var(--font-display), 'Bagel Fat One', system-ui, sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 0.95;
+  }
+
+  /* Editorial italic for accents */
+  .font-editorial {
+    font-family: var(--font-serif), Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  /* Marquee scroll */
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: marquee 32s linear infinite;
+  }
+
+  /* Slow sun rotation */
+  @keyframes spin-slow {
+    to { transform: rotate(360deg); }
+  }
+  .animate-spin-slow {
+    animation: spin-slow 28s linear infinite;
+  }
+}
