@@ -66,7 +66,7 @@ export default function CartPage() {
         <ShoppingBag className="h-16 w-16 text-muted-foreground/40 mb-6" />
         <h1 className="font-serif text-3xl font-semibold text-foreground mb-3">Your cart is empty</h1>
         <p className="text-muted-foreground mb-8 max-w-sm">
-          Looks like you haven&apos;t added anything yet. Browse our premium socks and find your fit.
+          Looks like you haven&apos;t added anything yet. Pick a blend and start your morning right.
         </p>
         <Button asChild size="lg">
           <Link href="/products">Shop Now</Link>

@@ -1,7 +1,6 @@
 'use server';
 
 import { z } from 'zod';
-import { createClient } from '@/lib/supabase/server';
 
 const schema = z.object({
   email: z.string().email().toLowerCase().trim(),
@@ -23,27 +22,7 @@ export async function subscribeToNewsletter(
     return { ok: false, error: 'Please enter a valid email address.' };
   }
 
-  const { email } = parsed.data;
+  console.log(`[NEWSLETTER] subscribe — ${parsed.data.email}`);
 
-  try {
-    const supabase = await createClient();
-
-    const { error } = await supabase
-      .from('newsletter_subscribers')
-      .insert({ email });
-
-    if (error) {
-      // PostgreSQL unique violation code
-      if (error.code === '23505') {
-        return { ok: false, alreadySubscribed: true };
-      }
-      console.error('Newsletter insert error:', error.message);
-      return { ok: false, error: 'Something went wrong. Please try again.' };
-    }
-
-    return { ok: true };
-  } catch (err) {
-    console.error('Newsletter action error:', err);
-    return { ok: false, error: 'Something went wrong. Please try again.' };
-  }
+  return { ok: true };
 }

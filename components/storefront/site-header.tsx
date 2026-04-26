@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { User, ShoppingBag, Menu, X } from 'lucide-react';
+import { ShoppingBag, Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useCartStore } from '@/lib/cart/store';
 import { BlendStartLogo } from '@/components/storefront/blendstart-logo';
@@ -70,14 +70,6 @@ export function SiteHeader() {
 
           <div className="flex items-center gap-1 shrink-0">
             <Link
-              href="/account"
-              aria-label="Account"
-              className="hidden h-10 w-10 items-center justify-center rounded-full text-cocoa/75 transition-colors hover:bg-rose/30 hover:text-cocoa sm:flex"
-            >
-              <User size={20} aria-hidden="true" />
-            </Link>
-
-            <Link
               href="/cart"
               aria-label={`Cart${cartCount > 0 ? `, ${cartCount} items` : ''}`}
               className="relative flex h-10 w-10 items-center justify-center rounded-full text-cocoa/75 transition-colors hover:bg-rose/30 hover:text-cocoa"
@@ -133,11 +125,6 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <div className="px-6 pt-4 text-sm text-cocoa/60">
-          <Link href="/account" onClick={() => setMenuOpen(false)} className="hover:underline">
-            My account
-          </Link>
-        </div>
       </div>
 
       {menuOpen && (

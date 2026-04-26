@@ -105,7 +105,7 @@ export const useCartStore = create<CartState>()(
       clearDiscount: () => set({ appliedDiscount: null }),
     }),
     {
-      name: 'knitto-cart',
+      name: 'blendstart-cart',
       storage: createJSONStorage(() => {
         // SSR-safe: return a no-op storage during SSR
         if (typeof window === 'undefined') {
