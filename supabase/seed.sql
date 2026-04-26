@@ -1,1 +1,0 @@
--- Seed data is loaded via /scripts/seed-products.ts in Phase 3 once the user provides the PDF.
