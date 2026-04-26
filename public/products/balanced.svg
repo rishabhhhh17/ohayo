@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="BlendStart Balanced pouch">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3e9d8"/>
+      <stop offset="1" stop-color="#e6d3b3"/>
+    </linearGradient>
+    <linearGradient id="pouch" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a2d24"/>
+      <stop offset="1" stop-color="#1f1612"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="800" fill="url(#bg)"/>
+  <g transform="translate(400 420)">
+    <ellipse cx="0" cy="260" rx="220" ry="22" fill="#000" opacity="0.12"/>
+    <path d="M -180 -250 Q -180 -300 -130 -300 L 130 -300 Q 180 -300 180 -250 L 180 230 Q 180 260 150 260 L -150 260 Q -180 260 -180 230 Z" fill="url(#pouch)"/>
+    <rect x="-110" y="-300" width="220" height="22" rx="6" fill="#1a120e"/>
+    <text x="0" y="-100" text-anchor="middle" fill="#f3e9d8" font-family="Georgia, serif" font-size="48" font-weight="700">BlendStart</text>
+    <text x="0" y="-60" text-anchor="middle" fill="#d4a373" font-family="Georgia, serif" font-size="24" font-style="italic">Balanced</text>
+    <line x1="-90" y1="-30" x2="90" y2="-30" stroke="#d4a373" stroke-width="1"/>
+    <text x="0" y="20" text-anchor="middle" fill="#f3e9d8" font-family="Helvetica, Arial, sans-serif" font-size="18" letter-spacing="3">SALTED CARAMEL</text>
+    <text x="0" y="48" text-anchor="middle" fill="#f3e9d8" font-family="Helvetica, Arial, sans-serif" font-size="18" letter-spacing="3">COCOA</text>
+    <text x="0" y="160" text-anchor="middle" fill="#d4a373" font-family="Helvetica, Arial, sans-serif" font-size="14" letter-spacing="2">23g PROTEIN · 11g FIBRE</text>
+    <text x="0" y="200" text-anchor="middle" fill="#d4a373" font-family="Helvetica, Arial, sans-serif" font-size="12" letter-spacing="2">BREAKFAST DRINK MIX</text>
+  </g>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="BlendStart Performance shaker">
+  <defs>
+    <linearGradient id="pbg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ece1cd"/>
+      <stop offset="1" stop-color="#cdb88f"/>
+    </linearGradient>
+    <linearGradient id="shaker" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1f2a36"/>
+      <stop offset="1" stop-color="#0c131c"/>
+    </linearGradient>
+    <linearGradient id="liquid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5a3a26"/>
+      <stop offset="1" stop-color="#2d1c12"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="800" fill="url(#pbg2)"/>
+  <g transform="translate(400 420)">
+    <ellipse cx="0" cy="240" rx="180" ry="20" fill="#000" opacity="0.18"/>
+    <rect x="-120" y="-250" width="240" height="60" rx="14" fill="#0a131c"/>
+    <rect x="-130" y="-200" width="260" height="450" rx="18" fill="url(#shaker)"/>
+    <path d="M -120 -50 L 120 -50 L 110 230 L -110 230 Z" fill="url(#liquid)" opacity="0.92"/>
+    <ellipse cx="0" cy="-50" rx="120" ry="14" fill="#a47655" opacity="0.8"/>
+    <text x="0" y="100" text-anchor="middle" fill="#e8a857" font-family="Georgia, serif" font-size="36" font-weight="700">B/S</text>
+    <text x="0" y="140" text-anchor="middle" fill="#f1e6d4" font-family="Helvetica, Arial, sans-serif" font-size="12" letter-spacing="3">PERFORMANCE</text>
+  </g>
+</svg>

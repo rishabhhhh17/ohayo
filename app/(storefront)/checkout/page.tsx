@@ -228,10 +228,19 @@ export default function CheckoutPage() {
     return null; // Will redirect
   }
 
+  const paymentsConfigured = Boolean(process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID);
+
   return (
     <div className="min-h-screen pt-24 pb-16 px-4">
       <div className="max-w-5xl mx-auto">
         <h1 className="font-serif text-3xl font-semibold text-foreground mb-8">Checkout</h1>
+
+        {!paymentsConfigured && (
+          <div className="mb-6 rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900 dark:border-amber-700 dark:bg-amber-950/30 dark:text-amber-200">
+            Online payments aren&apos;t live yet — we&apos;ll switch them on shortly. Browsing and
+            cart still work; please check back soon to complete checkout.
+          </div>
+        )}
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left: accordion steps */}
@@ -580,7 +589,7 @@ export default function CheckoutPage() {
 
                     <Button
                       onClick={handlePay}
-                      disabled={isPaying || !contactData || !addressData}
+                      disabled={isPaying || !contactData || !addressData || !paymentsConfigured}
                       size="lg"
                       className="w-full"
                     >
@@ -589,6 +598,8 @@ export default function CheckoutPage() {
                           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                           Processing…
                         </>
+                      ) : !paymentsConfigured ? (
+                        <>Payments coming soon</>
                       ) : (
                         <>Pay {formatINR(tot)}</>
                       )}
