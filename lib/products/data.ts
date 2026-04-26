@@ -52,15 +52,15 @@ export const PRODUCTS: StaticProduct[] = [
     images: [
       {
         id: 'img_balanced_1',
-        url: 'https://images.unsplash.com/photo-1542736667-069246bdbc6d?auto=format&fit=crop&w=1200&q=80',
-        alt_text: 'BlendStart Balanced salted caramel cocoa pouch on a marble counter',
+        url: '/products/balanced.svg',
+        alt_text: 'BlendStart Balanced salted caramel cocoa pouch',
         sort_order: 0,
         is_primary: true,
       },
       {
         id: 'img_balanced_2',
-        url: 'https://images.unsplash.com/photo-1612392987465-2d56d2bd9277?auto=format&fit=crop&w=1200&q=80',
-        alt_text: 'A glass of BlendStart cocoa being poured',
+        url: '/products/balanced-2.svg',
+        alt_text: 'A glass of BlendStart cocoa, ready in 20 seconds',
         sort_order: 1,
         is_primary: false,
       },
@@ -108,15 +108,15 @@ export const PRODUCTS: StaticProduct[] = [
     images: [
       {
         id: 'img_perf_1',
-        url: 'https://images.unsplash.com/photo-1593095948071-474c5cc2989d?auto=format&fit=crop&w=1200&q=80',
-        alt_text: 'BlendStart Performance pouch beside training kit',
+        url: '/products/performance.svg',
+        alt_text: 'BlendStart Performance salted caramel cocoa pouch',
         sort_order: 0,
         is_primary: true,
       },
       {
         id: 'img_perf_2',
-        url: 'https://images.unsplash.com/photo-1606889464198-fcb18894cf50?auto=format&fit=crop&w=1200&q=80',
-        alt_text: 'Athlete drinking BlendStart Performance',
+        url: '/products/performance-2.svg',
+        alt_text: 'BlendStart Performance shaker bottle',
         sort_order: 1,
         is_primary: false,
       },
