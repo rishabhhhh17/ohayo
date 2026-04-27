@@ -14,6 +14,8 @@ import { Separator } from '@/components/ui/separator';
 import { formatINR } from '@/lib/utils/format';
 import { PRODUCTS, getProductBySlug, getRelatedProducts } from '@/lib/products/data';
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return PRODUCTS.map((p) => ({ slug: p.slug }));
 }

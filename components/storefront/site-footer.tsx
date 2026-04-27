@@ -27,10 +27,9 @@ const FOOTER_COLUMNS = [
   {
     heading: 'Shop',
     links: [
-      { label: 'Balanced', href: '/products?variant=balanced' },
-      { label: 'Performance', href: '/products?variant=performance' },
-      { label: 'Subscribe & Save', href: '/products' },
-      { label: 'Gift Card', href: '/gift' },
+      { label: 'All blends', href: '/products' },
+      { label: 'Balanced', href: '/products/blendstart-balanced-salted-caramel-cocoa' },
+      { label: 'Performance', href: '/products/blendstart-performance-salted-caramel-cocoa' },
     ],
   },
   {
@@ -45,19 +44,18 @@ const FOOTER_COLUMNS = [
   {
     heading: 'Help',
     links: [
-      { label: 'Track Order', href: '/track' },
-      { label: 'Shipping & Returns', href: '/shipping' },
-      { label: 'Contact', href: '/contact' },
-      { label: 'Privacy Policy', href: '/privacy' },
+      { label: 'Track order', href: '/track' },
+      { label: 'Shipping policy', href: '/shipping' },
+      { label: 'Refund policy', href: '/refunds' },
+      { label: 'Contact us', href: '/contact' },
     ],
   },
   {
     heading: 'Company',
     links: [
       { label: 'Our story', href: '/about' },
-      { label: 'Press', href: '/press' },
-      { label: 'Careers', href: '/careers' },
-      { label: 'Wholesale', href: '/wholesale' },
+      { label: 'Privacy policy', href: '/privacy' },
+      { label: 'Terms & conditions', href: '/terms' },
     ],
   },
 ] as const;
