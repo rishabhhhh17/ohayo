@@ -23,6 +23,7 @@ import {
 import { useCartStore } from '@/lib/cart/store';
 import { formatINR } from '@/lib/utils/format';
 import { loadRazorpayScript, openCheckout } from '@/lib/razorpay/checkout-client';
+import { track } from '@/lib/analytics/fbq';
 
 // ---------------------------------------------------------------------------
 // Zod schemas
@@ -88,6 +89,19 @@ export default function CheckoutPage() {
       router.replace('/cart');
     }
   }, [items, router]);
+
+  // Fire InitiateCheckout once when the page loads with items
+  useEffect(() => {
+    if (items.length === 0) return;
+    track('InitiateCheckout', {
+      value: tot,
+      currency: 'INR',
+      num_items: items.reduce((n, i) => n + i.quantity, 0),
+      content_ids: items.map((i) => i.variantId),
+      contents: items.map((i) => ({ id: i.variantId, quantity: i.quantity })),
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Contact form
   const contactForm = useForm<ContactFields>({
@@ -209,6 +223,16 @@ export default function CheckoutPage() {
 
       const verifyData = (await verifyRes.json()) as { ok: boolean; redirectTo: string };
 
+      // Track successful purchase
+      track('Purchase', {
+        value: tot,
+        currency: 'INR',
+        num_items: items.reduce((n, i) => n + i.quantity, 0),
+        content_ids: items.map((i) => i.variantId),
+        contents: items.map((i) => ({ id: i.variantId, quantity: i.quantity })),
+        order_id: orderData.orderNumber,
+      });
+
       // Success — clear cart and redirect
       clear();
       toast.success('Payment successful! Redirecting…');
@@ -222,7 +246,7 @@ export default function CheckoutPage() {
       }
       setIsPaying(false);
     }
-  }, [contactData, addressData, items, appliedDiscount, clear, router]);
+  }, [contactData, addressData, items, appliedDiscount, clear, router, tot]);
 
   if (items.length === 0) {
     return null; // Will redirect
