@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { Minus, Plus, ShoppingBag, Zap, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -15,6 +15,7 @@ import {
 import { formatINR } from '@/lib/utils/format';
 import { useCartStore } from '@/lib/cart/store';
 import { cn } from '@/lib/utils';
+import { track } from '@/lib/analytics/fbq';
 import type { StaticProduct, StaticImage, StaticVariant } from '@/lib/products/data';
 
 function ImageGallery({ images, productName }: { images: StaticImage[]; productName: string }) {
@@ -127,11 +128,26 @@ export function ProductDetails({ product }: { product: StaticProduct }) {
 
   const primaryImage = product.images.find((i) => i.is_primary) ?? product.images[0];
 
+  // Fire ViewContent once per product page load
+  useEffect(() => {
+    track('ViewContent', {
+      content_type: 'product',
+      content_ids: [product.id],
+      content_name: product.name,
+      content_category: product.category,
+      value: product.base_price,
+      currency: 'INR',
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [product.id]);
+
   const handleAddToCart = () => {
     if (!selectedVariant) {
       toast.error('Please select a pack size.');
       return;
     }
+
+    const lineValue = (selectedVariant.price_override ?? product.base_price) * quantity;
 
     cartAdd({
       variantId: selectedVariant.id,
@@ -143,6 +159,15 @@ export function ProductDetails({ product }: { product: StaticProduct }) {
       size: selectedVariant.size,
       colorName: selectedVariant.color_name,
       quantity,
+    });
+
+    track('AddToCart', {
+      content_type: 'product',
+      content_ids: [selectedVariant.id],
+      content_name: product.name,
+      value: lineValue,
+      currency: 'INR',
+      contents: [{ id: selectedVariant.id, quantity }],
     });
 
     toast.success(`${product.name} added to cart`, {
