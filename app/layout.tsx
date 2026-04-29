@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Fraunces, Bagel_Fat_One } from 'next/font/google';
 import { Toaster } from '@/components/ui/sonner';
+import { MetaPixel } from '@/components/analytics/meta-pixel';
 import { cn } from '@/lib/utils';
 import './globals.css';
 
@@ -39,6 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn(inter.variable, fraunces.variable, bagel.variable)}>
       <body className="font-sans antialiased bg-background text-foreground">
+        <MetaPixel />
         {children}
         <Toaster />
       </body>
