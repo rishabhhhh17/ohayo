@@ -166,7 +166,7 @@ export function SiteFooter() {
           <p className="text-sm text-cocoa/80">
             Use code{' '}
             <span className="font-mono font-bold text-cocoa">WELCOME15</span>{' '}
-            for <span className="font-bold">15% off</span> your first order.
+            for <span className="font-bold">15% off</span> your order.
           </p>
         </div>
       </div>

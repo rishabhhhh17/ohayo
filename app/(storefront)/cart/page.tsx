@@ -11,7 +11,6 @@ import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
 import { useCartStore } from '@/lib/cart/store';
 import { formatINR } from '@/lib/utils/format';
-import { SHIPPING_CONFIG } from '@/lib/config/shipping';
 import { applyDiscountCode } from './actions';
 
 export default function CartPage() {
@@ -24,7 +23,6 @@ export default function CartPage() {
   const sub = subtotal();
   const ship = shipping();
   const tot = total();
-  const freeShippingRemaining = SHIPPING_CONFIG.freeThreshold - sub;
 
   function handleRemove(variantId: string) {
     remove(variantId);
@@ -80,18 +78,9 @@ export default function CartPage() {
       <div className="max-w-6xl mx-auto">
         <h1 className="font-serif text-3xl font-semibold text-foreground mb-8">Your Cart</h1>
 
-        {/* Free shipping progress */}
-        {freeShippingRemaining > 0 && (
-          <div className="mb-6 rounded-lg bg-muted/50 px-4 py-3 text-sm text-muted-foreground">
-            Add <span className="font-medium text-foreground">{formatINR(freeShippingRemaining)}</span> more for{' '}
-            <span className="font-medium text-foreground">free shipping</span>!
-          </div>
-        )}
-        {freeShippingRemaining <= 0 && (
-          <div className="mb-6 rounded-lg bg-green-50 dark:bg-green-950/30 px-4 py-3 text-sm text-green-700 dark:text-green-400">
-            You qualify for free shipping!
-          </div>
-        )}
+        <div className="mb-6 rounded-lg bg-green-50 dark:bg-green-950/30 px-4 py-3 text-sm text-green-700 dark:text-green-400">
+          Free shipping on every order across India.
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Line items */}

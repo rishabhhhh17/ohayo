@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { AnnouncementBar } from '@/components/storefront/announcement-bar';
 import { SiteHeader } from '@/components/storefront/site-header';
 import { SiteFooter } from '@/components/storefront/site-footer';
 import { CartHydrator } from '@/components/storefront/cart-hydrator';
@@ -34,6 +35,7 @@ export default function StorefrontLayout({
   return (
     <>
       <CartHydrator />
+      <AnnouncementBar />
       <SiteHeader />
       <main id="main-content" tabIndex={-1}>
         {children}
