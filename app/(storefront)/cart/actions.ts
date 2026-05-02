@@ -18,6 +18,8 @@ const STATIC_CODES: Record<
   { type: 'percentage' | 'fixed'; value: number; minOrder: number }
 > = {
   WELCOME10: { type: 'percentage', value: 10, minOrder: 0 },
+  WELCOME15: { type: 'percentage', value: 15, minOrder: 0 },
+  TESTORDER100: { type: 'percentage', value: 100, minOrder: 0 },
   BLEND200: { type: 'fixed', value: 20000, minOrder: 99900 },
 };
 

@@ -160,6 +160,17 @@ export function SiteFooter() {
         </div>
       </div>
 
+      {/* Promo strip */}
+      <div className="border-t border-cocoa/10 bg-cream">
+        <div className="container py-5 text-center">
+          <p className="text-sm text-cocoa/80">
+            Use code{' '}
+            <span className="font-mono font-bold text-cocoa">WELCOME15</span>{' '}
+            for <span className="font-bold">15% off</span> your first order.
+          </p>
+        </div>
+      </div>
+
       {/* Bottom bar */}
       <div className="border-t border-cocoa/10 bg-cocoa text-cream">
         <div className="container flex flex-col gap-3 py-6 sm:flex-row sm:items-center sm:justify-between">

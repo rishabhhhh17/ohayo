@@ -31,8 +31,12 @@ const STATIC_CODES: Record<
   { type: 'percentage' | 'fixed'; value: number; minOrder: number }
 > = {
   WELCOME10: { type: 'percentage', value: 10, minOrder: 0 },
+  WELCOME15: { type: 'percentage', value: 15, minOrder: 0 },
+  TESTORDER100: { type: 'percentage', value: 100, minOrder: 0 },
   BLEND200: { type: 'fixed', value: 20000, minOrder: 99900 },
 };
+
+const RAZORPAY_MIN_PAISE = 100;
 
 function buildOrderNumber(): string {
   const ts = Date.now().toString(36).toUpperCase();
@@ -104,7 +108,11 @@ export async function POST(request: Request) {
   }
 
   const shippingAmount = calculateShipping(subtotal);
-  const totalAmount = subtotal - discountAmount + shippingAmount;
+  let totalAmount = subtotal - discountAmount + shippingAmount;
+  if (totalAmount < RAZORPAY_MIN_PAISE) {
+    discountAmount = Math.max(0, subtotal + shippingAmount - RAZORPAY_MIN_PAISE);
+    totalAmount = subtotal - discountAmount + shippingAmount;
+  }
   const orderNumber = buildOrderNumber();
 
   const razorpay = new Razorpay({ key_id: keyId, key_secret: keySecret });
