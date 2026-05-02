@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { PurchaseTracker } from './purchase-tracker';
 
 export const metadata: Metadata = {
   title: 'Order Confirmed',
@@ -16,6 +17,7 @@ export default function OrderSuccessPage({ params }: PageProps) {
 
   return (
     <div className="min-h-screen pt-24 pb-16 px-4">
+      <PurchaseTracker orderNumber={orderNumber} />
       <div className="max-w-xl mx-auto text-center">
         <CheckCircle2 className="h-16 w-16 text-green-500 mx-auto mb-4" />
         <h1 className="font-serif text-3xl font-semibold text-foreground mb-2">

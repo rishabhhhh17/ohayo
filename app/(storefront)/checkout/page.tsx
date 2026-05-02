@@ -234,17 +234,25 @@ export default function CheckoutPage() {
 
       const verifyData = (await verifyRes.json()) as { ok: boolean; redirectTo: string };
 
-      // Client-side Purchase Pixel — eventID lets Meta dedupe with the CAPI fire
-      track('Purchase', {
-        value: tot,
-        currency: 'INR',
-        num_items: numItems,
-        content_ids: contentIds,
-        contents: items.map((i) => ({ id: i.variantId, quantity: i.quantity })),
-        order_id: orderData.orderNumber,
-      }, eventId);
+      // Stash purchase payload for the thank-you page Pixel fire (eventID lets
+      // Meta dedupe with the CAPI fire). Keyed on orderNumber, which is in the
+      // success URL.
+      try {
+        sessionStorage.setItem(
+          `oh_purchase_${orderData.orderNumber}`,
+          JSON.stringify({
+            event_id: eventId,
+            value: tot,
+            currency: 'INR',
+            num_items: numItems,
+            content_ids: contentIds,
+            contents: items.map((i) => ({ id: i.variantId, quantity: i.quantity })),
+            order_id: orderData.orderNumber,
+          }),
+        );
+      } catch {}
 
-      // Success — clear cart and redirect
+      // Success — clear cart and redirect (Purchase pixel fires on the success page)
       clear();
       toast.success('Payment successful! Redirecting…');
       router.push(verifyData.redirectTo);
