@@ -203,7 +203,12 @@ export default function CheckoutPage() {
         theme: { color: '#1a1a1a' },
       });
 
-      // Verify payment
+      // Same event_id used by client Pixel + server CAPI — Meta dedupes
+      const eventId = `purchase_${payload.razorpay_payment_id}`;
+      const numItems = items.reduce((n, i) => n + i.quantity, 0);
+      const contentIds = items.map((i) => i.variantId);
+
+      // Verify payment (server also fires CAPI Purchase with same event_id)
       const verifyRes = await fetch('/api/razorpay/verify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -212,6 +217,12 @@ export default function CheckoutPage() {
           razorpay_order_id: payload.razorpay_order_id,
           razorpay_payment_id: payload.razorpay_payment_id,
           razorpay_signature: payload.razorpay_signature,
+          event_id: eventId,
+          email: contactData?.email,
+          phone: contactData?.phone,
+          value: tot,
+          content_ids: contentIds,
+          num_items: numItems,
         }),
       });
 
@@ -223,15 +234,15 @@ export default function CheckoutPage() {
 
       const verifyData = (await verifyRes.json()) as { ok: boolean; redirectTo: string };
 
-      // Track successful purchase
+      // Client-side Purchase Pixel — eventID lets Meta dedupe with the CAPI fire
       track('Purchase', {
         value: tot,
         currency: 'INR',
-        num_items: items.reduce((n, i) => n + i.quantity, 0),
-        content_ids: items.map((i) => i.variantId),
+        num_items: numItems,
+        content_ids: contentIds,
         contents: items.map((i) => ({ id: i.variantId, quantity: i.quantity })),
         order_id: orderData.orderNumber,
-      });
+      }, eventId);
 
       // Success — clear cart and redirect
       clear();
